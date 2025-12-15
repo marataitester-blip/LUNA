@@ -3,75 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --foreground: #D4AF37;
+  --foreground-rgb: 212, 175, 55; /* Золото */
+  --background-start-rgb: 5, 5, 5; /* Черный */
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-inter), sans-serif;
-  overflow-x: hidden;
-  overscroll-behavior-y: none; /* Disables elastic scroll on iOS */
-  -webkit-font-smoothing: antialiased;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  /* Принудительно красим всё в золото на черном */
+  background-color: #050505;
+  color: #D4AF37;
 }
 
-/* --- Atmosphere & Textures --- */
-
-/* Stardust Background Pattern */
-.bg-stardust {
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.4;
-}
-
-/* Glassmorphism Panel */
-.glass-panel {
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Soft Glow Text */
-.text-glow {
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-}
-
-/* --- Scrollbar Aesthetics --- */
+/* Убираем скроллбары для красоты */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
-::-webkit-scrollbar-track {
-  background: #050505;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: #1F1F1F;
+  background: #333;
   border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
-}
-
-/* --- Form Elements --- */
-input, textarea {
-  background-color: transparent; 
-  caret-color: #D4AF37;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #0a0a0a inset !important;
-  -webkit-text-fill-color: #D4AF37 !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-::selection {
-  background: rgba(212, 175, 55, 0.2);
-  color: #fff;
 }
