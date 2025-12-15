@@ -3,30 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 212, 175, 55; /* Золото */
-  --background-start-rgb: 5, 5, 5; /* Черный */
+  --foreground-rgb: 212, 175, 55;
+  --background-start-rgb: 5, 5, 5;
   --background-end-rgb: 0, 0, 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  min-height: 100vh;
-  /* Принудительно красим всё в золото на черном */
-  background-color: #050505;
-  color: #D4AF37;
+  color: #D4AF37; /* Золотой цвет текста */
+  background: #050505; /* Черный фон */
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
 }
 
-/* Убираем скроллбары для красоты */
+h1, h2, h3 {
+  font-family: var(--font-cinzel), serif;
+}
+
+/* Убираем полосу прокрутки для эстетики */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background: #333;
-  border-radius: 3px;
 }
