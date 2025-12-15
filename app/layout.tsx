@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cinzel } from "next/font/google"; // Подключаем шрифты
+import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -9,7 +9,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#050505",
+  themeColor: "#000000",
 };
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-background text-foreground`}>
+      <body className={`${inter.variable} ${cinzel.variable} antialiased`}>
         {children}
       </body>
     </html>
