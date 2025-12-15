@@ -4,7 +4,7 @@
 
 :root {
   --background: #050505;
-  --foreground: #F4E4BC;
+  --foreground: #D4AF37;
 }
 
 body {
@@ -12,11 +12,33 @@ body {
   background: var(--background);
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
-  /* Prevent bounce effect on iOS */
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: none; /* Disables elastic scroll on iOS */
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Scrollbar for Webkit (Chrome, Safari) */
+/* --- Atmosphere & Textures --- */
+
+/* Stardust Background Pattern */
+.bg-stardust {
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.4;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Soft Glow Text */
+.text-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* --- Scrollbar Aesthetics --- */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -26,7 +48,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1A1A1A;
+  background: #1F1F1F;
   border-radius: 3px;
 }
 
@@ -34,25 +56,22 @@ body {
   background: #D4AF37;
 }
 
-/* Text Selection Color */
-::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: #fff;
+/* --- Form Elements --- */
+input, textarea {
+  background-color: transparent; 
+  caret-color: #D4AF37;
 }
 
-/* Utility for glass morphism cards */
-.glass-panel {
-  background: rgba(26, 26, 26, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-/* Input Auto-fill fix for dark mode */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #1A1A1A inset !important;
-    -webkit-text-fill-color: #D4AF37 !important;
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0a0a0a inset !important;
+  -webkit-text-fill-color: #D4AF37 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.2);
+  color: #fff;
 }

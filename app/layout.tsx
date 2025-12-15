@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 
-// Configure Fonts
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-inter",
@@ -31,7 +30,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  userScalable: false, // Critical for app-like feel on iOS
+  userScalable: false,
   themeColor: "#050505",
 };
 
@@ -42,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-luna-black`}>
+      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>
